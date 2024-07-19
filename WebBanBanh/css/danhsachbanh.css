@@ -1,0 +1,98 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ff9999;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 25px 0;
+}
+
+.sidebar ul li a {
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li:hover {
+    font-size: 20px;
+    box-shadow: 0 0 4px 4px #c86161;
+}
+/* lisst tour */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.tour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    padding: 20px;
+    padding-left: 220px;
+}
+
+.tour-item {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    align-items: center;
+}
+
+.tour-item img {
+    width: 300px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.tour-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tour-info h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.tour-info p {
+    margin: 5px 0;
+}
+
+.btn-tour{
+    display: flex;
+    flex-direction: row;
+}
+.btn-tour button {
+    width: 100%;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.tour-info button:hover {
+    background-color: #e65c00;
+}

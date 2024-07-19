@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Trắc Nghiệm</title>
+    <link rel="stylesheet" href="../css/tracnghiem.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="menu">
+            <h2>Chọn Đề</h2>
+            <ul>
+                <li><a href="#" onclick="startQuiz()">Đề 1</a></li>
+                <li><a href="#" onclick="startQuiz()">Đề 2</a></li>
+                <li><a href="#" onclick="startQuiz()">Đề 3</a></li>
+                <li><a href="#" onclick="startQuiz()">Đề 4</a></li>
+                <li><a href="#" onclick="startQuiz()">Đề 5</a></li>
+                <li><a href="#" onclick="startQuiz()">Đề 6</a></li>
+                <li><a href="./home.html">Trang Chu</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1>Trắc Nghiệm</h1>
+            <div id="personal-info">
+                <h2>Thông Tin Cá Nhân</h2>
+                <form id="infoForm" onsubmit="return false;">
+                    <label for="name">Tên:</label>
+                    <input type="text" id="name" required>
+                    <label for="age">Tuổi:</label>
+                    <input type="number" id="age" required>
+                    <button onclick="startQuiz()">Bắt đầu</button>
+                </form>
+            </div>
+            <div id="quiz" style="display:none;">
+                <p id="timer">Thời gian còn lại: 60:00</p>
+                <form id="quizForm" onsubmit="return false;">
+                    <div id="questions"></div>
+                    <button onclick="submitQuiz()">Nộp bài</button>
+                </form>
+            </div>
+            <div id="results" style="display:none;">
+                <h2>Kết Quả</h2>
+                <p id="score"></p>
+                <div id="answers"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/tracnghiem.js"></script>
+</body>
+
+</html>

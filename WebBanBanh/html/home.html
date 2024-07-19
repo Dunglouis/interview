@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Home</title>
+    <link rel="icon" href="../items/Logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div>
+        <nav class="menu">
+            <div class="logo">
+                <img src="../items/Logo/logo.png" alt="Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Bạn muốn đi đâu...">
+                <i class="fas fa-search" style="color: black;"></i>
+            </div>
+            <div class="user-info">
+                <p id="userInfo"></p>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#">Hồ sơ</a>
+                    <a href="#">Ví</a>
+                    <a href="./tracnghiem.html">Câu hỏi trắc nghiệm</a>
+                    <a href="#" id="toggleTheme">Chế độ tối</a>
+                    <a href="#" onclick="logout()">Đăng Xuất</a>
+                </div>
+            </div>
+            <div style="cursor: pointer;">
+                <p>Đơn Bánh</p>
+            </div>
+            <div>
+                <i class="fas fa-cart-plus"></i>
+                <a href="#">Bánh đã đặt</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="./home.html">Trang Chủ</a></li>
+                    <li><a href="./danhsachbanh.html">Danh sách Bánh</a></li>
+                    <li><a href="#tour-list">Thông Tin Bánh</a></li>
+                    <li><a href="#chart">Top bánh ngon</a></li>
+                    <li><a href="#highlighted-tourguide">Quán gợi ý</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCHNXy0euHVvJSwAOw5zHfLw">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <!-- Slide Section -->
+                <div class="slide-container">
+                    <div class="slide">
+                        <img src="../items/slidebar/slide1.jpg" alt="Slide 1">
+                    </div>
+                    <div class="slide">
+                        <img src="../items/slidebar/slide2.jpg" alt="Slide 2">
+                    </div>
+                    <div class="slide">
+                        <img src="../items/slidebar/slide3.jpg" alt="Slide 3">
+                    </div>
+                    <div class="slide">
+                        <img src="../items/slidebar/slide4.jpg" alt="Slide 4">
+                    </div>
+                    <div class="slide">
+                        <img src="../items/slidebar/slide5.jpg" alt="Slide 5">
+                    </div>
+                </div>
+                <div class="tour-list" id="tour-list">
+                    <div class="tour-item">
+                        <img src="../items/anhtour/banhkemsaurieng.webp" alt="banh 1">
+                        <h3>Mousse bơ sầu riêng</h3>
+                        <p>170.000đ</p>
+                    </div>
+                    <div class="tour-item">
+                        <img src="../items/anhtour/banhnhoxoai.webp" alt="banh 2">
+                        <h3>Bánh kem nho xoài</h3>
+                        <p>250.000đ</p>
+                    </div>
+                    <div class="tour-item">
+                        <img src="../items/anhtour/banhthach.webp" alt="banh 3">
+                        <h3>Bánh thạch hoa quả thơm ngát</h3>
+                        <p>190.000đ</p>
+                    </div>
+                    <div class="tour-item">
+                        <img src="../items/anhtour/cherri.webp" alt="banh 4">
+                        <h3>Bánh kem cherri</h3>
+                        <p>150.000đ</p>
+                    </div>
+                    <div class="tour-item">
+                        <img src="../items/anhtour/kembohoaqua.webp" alt="banh 5">
+                        <h3>Bánh kem hoa quả</h3>
+                        <p>150.000đ</p>
+                    </div>
+                    <div class="tour-item">
+                        <img src="../items/anhtour/vietquatsocola.webp" alt="banh 6">
+                        <h3>Bánh kém việt quất socola</h3>
+                        <p>140.000đ</p>
+                    </div>
+                </div>
+                <div class="chart" id="chart">
+                    <h2>Biểu đồ xếp hạng bánh ngon nhất</h2>
+                    <div class="bar-chart" id="barChart">
+                        <!-- Bars will be added here dynamically -->
+                    </div>
+                    <div class="labels" id="labels">
+                        <!-- Labels will be added here dynamically -->
+                    </div>
+                </div>
+                <!-- Phần top 10 tour hay được phục vụ -->
+                <div class="top-tours" id="top-tours">
+                    <h2>Top 10 cửa hàng bán bánh ngon</h2>
+                    <table id="topToursTable">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên cửa hàng</th>
+                                <th>Đánh giá</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sumi cake</td>
+                                <td>5*</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Yami Yami</td>
+                                <td>5*</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Story cake</td>
+                                <td>4.9*</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Berri mum</td>
+                                <td>4.8*</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Ngon ngon story</td>
+                                <td>4.5*</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Xoài new</td>
+                                <td>4.5*</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Chúp Chúp</td>
+                                <td>4.5*</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Halo shop</td>
+                                <td>4.4*</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Vivu cake</td>
+                                <td>4.4*</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>New cake cheri</td>
+                                <td>4.3*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Phần Tourguide nổi bật -->
+                <div class="highlighted-tourguide" id="highlighted-tourguide">
+                    <h2>Quán nổi bật</h2>
+                    <div class="tourguide-item">
+                        <img src="../items/anhtourguids/story1.jpg" alt="Tourguide 1">
+                        <h3>Berkery</h3>
+                        <p>Đánh giá: 5 sao</p>
+                    </div>
+                    <div class="tourguide-item">
+                        <img src="../items/anhtourguids/story2.jpg" alt="Tourguide 2">
+                        <h3>Phúc Hỷ</h3>
+                        <p>Đánh giá: 4.9 sao</p>
+                    </div>
+                    <div class="tourguide-item">
+                        <img src="../items/anhtourguids/story3.jpg" alt="Tourguide 3">
+                        <h3>Lâm Hương</h3>
+                        <p>Đánh giá: 4.5 sao</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Thông tin về chúng tôi</h2>
+                <p>Chúng tôi cung cấp các loại bánh kem giá rẻ và chất lượng.</p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> 0865-434-955</span>
+                    <span><i class="fas fa-envelope"></i> phamdunglouis1@gmail.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="./home.html">Trang Chủ</a></li>
+                    <li><a href="./danhsachtour.html">Danh sách bánh</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h2>Mạng xã hội</h2>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100035251263324"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dung_do_do/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/UCHNXy0euHVvJSwAOw5zHfLw"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Tour Company | Designed by PhamDung
+        </div>
+    </footer>
+    <script src="../js/home.js"></script>
+</body>
+
+</html>

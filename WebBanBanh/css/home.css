@@ -1,0 +1,392 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f5f7;
+    box-sizing: border-box;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.menu {
+    background-color: #ff9999;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(34, 34, 34, 0.756);
+}
+
+.menu.dark-mode {
+    background-color: #333;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px;
+    padding-bottom: 60px; /* Add padding to ensure footer is not overlapped */
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ff9999;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 25px 0;
+}
+
+.sidebar ul li a {
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li:hover {
+    font-size: 20px;
+    box-shadow: 0 0 4px 4px #c86161;
+}
+
+.content {
+    margin-left: 220px; /* Width of the sidebar */
+    padding: 40px 20px 0 0;
+    flex: 1;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 5px;
+}
+
+.search-bar {
+    width: 900px;
+    margin: 0 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.search-bar i {
+    font-size: 25px;
+    margin-left: 670px;
+}
+
+.user-info {
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 7px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-bar input[type="text"].dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dropdown-menu {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: none;
+    border-radius: 10px;
+}
+
+.dropdown-menu a {
+    color: #fe5151;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #eceaea;
+    border-radius: 10px;
+}
+
+.user-info:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Slide */
+.slide-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/* tour du lich */
+
+.tour-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 360px;
+}
+
+.tour-item {
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.tour-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.tour-item h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.tour-item p {
+    color: #ff4b2b;
+    font-weight: bold;
+}
+
+.chart {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chart.dark-mode {
+    color: white;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 300px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.bar-chart.dark-mode {
+    border-color: white;
+}
+
+.bar {
+    width: 15%;
+    background-color: rgba(75, 192, 192, 0.5);
+    text-align: center;
+    transition: height 0.3s ease-in-out;
+}
+
+.bar.dark-mode {
+    background-color: rgba(75, 192, 192, 0.7);
+}
+
+.bar span {
+    display: block;
+    margin-top: 5px;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.labels.dark-mode {
+    color: white;
+}
+
+.label {
+    width: 15%;
+    text-align: center;
+}
+
+/* Top 10 tour hay được phục vụ */
+.top-tours {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.top-tours.dark-mode {
+    color: white;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+td.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+/* Tourguide nổi bật */
+.highlighted-tourguide {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.highlighted-tourguide.dark-mode {
+    color: white;
+}
+
+.tourguide-item {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.tourguide-item img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.tourguide-item h3 {
+    margin: 10px 0 5px;
+}
+
+.tourguide-item p {
+    margin: 0;
+    color: #777;
+}
+
+.tourguide-item.dark-mode p {
+    color: #ccc;
+}
+
+.footer {
+    height: 200px;
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer.dark-mode {
+    background: #000;
+    color: #fff;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer .footer-content .footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer .footer-content .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer .footer-content .footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer .footer-content .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .footer-content .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer .footer-bottom {
+    margin-top: 20px;
+}
